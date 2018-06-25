@@ -29,9 +29,6 @@ def test_assert():
 ])
 def test_param(a, b, expected):
     assert diction(a,b)==expected
-    assert diction([1,2,3], 3)==None
-    assert diction(3,['a','b','c'])==None
-    assert diction([],['a','b','c'])=={}
 
 #hypothesis
 @given(st.lists(), st.lists())
