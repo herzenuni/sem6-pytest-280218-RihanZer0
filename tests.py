@@ -15,10 +15,18 @@ def diction(keys, values):
 
 #asserts
 def test_assert():
-    assert diction([1, 2, 3, 4],['a','b','c'])=={1: 'a', 2: 'b', 3: 'c', 4: None}
-    assert diction([1,2,3], 3)==None
-    assert diction(3,['a','b','c'])==None
-    assert diction([],['a','b','c'])=={}
+    keys = ['Why', 'now']
+    values = ['Почему', 'сейчас']
+    expected = { 'Why': 'Почему', 'now': 'сейчас' }
+
+    assert diction(keys, values) == expected
+
+def test_assert_with_none():
+    keys = ['Вот', 'ПОВОРОТ']
+    values = ['это']
+    expected = { 'Вот': 'это', 'ПОВОРОТ': None }
+
+    assert diction(keys, values) == expected
 
 #param
 @pytest.mark.parametrize("a,b,expected",[
